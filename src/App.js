@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const url = "http://34.162.46.29:8080/employee";
+    const url = "http://34.111.108.96/api/employee";
     fetch(url)
     .then(response => response.json())
     .then(json => this.setState({ posts: json }))
