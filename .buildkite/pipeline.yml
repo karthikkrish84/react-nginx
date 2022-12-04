@@ -1,3 +1,5 @@
+env:
+  COMPOSE_FILE: compose.yml
 steps:
   - plugins:
       - docker-compose#v4.7.0:
