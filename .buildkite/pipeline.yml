@@ -1,6 +1,6 @@
 steps:
   - label: "Build Image"
-    command: "docker build --tag karthikkrish84/myreactapp ."
+    command: "docker build . -t karthikkrish84/myreactapp:latest; docker push karthikkrish84/myreactapp:latest"
     plugins:
       - docker#v5.3.0:
           image: "docker:latest"
