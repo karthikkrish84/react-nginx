@@ -1,5 +1,5 @@
 steps:
-  - command: "docker build --tag karthikkrish84/myreactapp ."
+  - command: build.sh
     plugins:
       - docker#v5.3.0:
           image: "docker:latest"
