@@ -1,7 +1,5 @@
-env:
-  COMPOSE_FILE: compose.yaml
 steps:
-  - plugins:
-      - docker-compose#v4.7.0:
-          run: app
-          command: ["docker", "build", "--tag","karthikkrish84/myreactapp:latest","."]
+  - command: "docker build --tag karthikkrish84/myreactapp ."
+    plugins:
+      - docker#v5.3.0:
+          image: "docker:latest"
