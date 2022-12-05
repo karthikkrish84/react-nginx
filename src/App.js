@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const url = "http://aee8d2600be6a498b88303136bda5ef4-1085178431.us-east-1.elb.amazonaws.com/api/employee";
+    const url = "https://aee8d2600be6a498b88303136bda5ef4-1085178431.us-east-1.elb.amazonaws.com/api/employee";
     fetch(url)
     .then(response => response.json())
     .then(json => this.setState({ posts: json }))
