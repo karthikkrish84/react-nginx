@@ -3,3 +3,11 @@ steps:
     command: "docker build --tag karthikkrish84/myreactapp ."
   - label: "Push Image"
     command: "docker push karthikkrish84/myreactapp:latest"
+  - label: "Deploy"
+    env:
+      PATH: "$PATH:/var/lib/buildkite-agent/apache-maven-3.6.3/bin:/var/lib/buildkite-agent:/usr/local/bin"
+      AWS_PROFILE: "buildkite"
+    commands:
+      - "git clone git@github.com:karthikkrish84/GKE-deployment-files.git"
+      - "cd GKE-deployment-files/react"
+      - "kubectl apply -f . -n awsproject"
